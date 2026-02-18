@@ -1,6 +1,6 @@
 {
   "name": "scriptrecon",
-  "version": "2.0.0",
+  "version": "1.0.0",
   "description": "Professional JavaScript Attack-Surface Reconnaissance Engine",
   "main": "index.js",
   "bin": {
