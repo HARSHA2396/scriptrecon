@@ -1,0 +1,26 @@
+{
+    "name": "@js-analyzer/core",
+    "version": "1.0.0",
+    "description": "Core analysis engine for Advanced JS Analyzer",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "build": "tsc",
+        "test": "jest"
+    },
+    "dependencies": {
+        "@babel/parser": "^7.23.9",
+        "@babel/traverse": "^7.23.9",
+        "@types/babel__traverse": "^7.20.5",
+        "@types/js-yaml": "^4.0.9",
+        "acorn": "^8.16.0",
+        "astray": "^1.1.1",
+        "diff": "^8.0.3",
+        "js-yaml": "^4.1.1"
+    },
+    "devDependencies": {
+        "@types/diff": "^7.0.2",
+        "@types/node": "^20.11.19",
+        "typescript": "^5.3.3"
+    }
+}

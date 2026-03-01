@@ -1,0 +1,156 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "JS Recon Analyzer PRO (Next-Gen)",
+          "informationUri": "https://example.com",
+          "rules": [
+            {
+              "id": "GOOGLE_DORK_PATTERN",
+              "shortDescription": {
+                "text": "GOOGLE_DORK_PATTERN"
+              }
+            },
+            {
+              "id": "PRIVATE_KEY_HEADER",
+              "shortDescription": {
+                "text": "PRIVATE_KEY_HEADER"
+              }
+            },
+            {
+              "id": "CLOUD_METADATA_SSRF",
+              "shortDescription": {
+                "text": "CLOUD_METADATA_SSRF"
+              }
+            },
+            {
+              "id": "HIGH_ENTROPY_SECRET",
+              "shortDescription": {
+                "text": "HIGH_ENTROPY_SECRET"
+              }
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "GOOGLE_DORK_PATTERN",
+          "level": "warning",
+          "message": {
+            "text": "Google Dorking pattern detected. Script may be scraping or leaking infrastructure."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "FinalBoss_Pillar1.js"
+                },
+                "region": {
+                  "startLine": 18
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "PRIVATE_KEY_HEADER",
+          "level": "error",
+          "message": {
+            "text": "Hardcoded Private Key detected in raw text."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "FinalBoss_Pillar1.js"
+                },
+                "region": {
+                  "startLine": 22
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CLOUD_METADATA_SSRF",
+          "level": "error",
+          "message": {
+            "text": "Cloud Metadata IP/DNS found. SSRF attacks here can steal AWS/GCP IAM roles."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "FinalBoss_Pillar1.js"
+                },
+                "region": {
+                  "startLine": 29
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "HIGH_ENTROPY_SECRET",
+          "level": "error",
+          "message": {
+            "text": "High Entropy String detected"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "AdvancedOrderProcessor.js"
+                },
+                "region": {
+                  "startLine": 6
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "HIGH_ENTROPY_SECRET",
+          "level": "error",
+          "message": {
+            "text": "High Entropy String detected"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "FinalBoss_Pillar1.js"
+                },
+                "region": {
+                  "startLine": 15
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "HIGH_ENTROPY_SECRET",
+          "level": "error",
+          "message": {
+            "text": "High Entropy String detected"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "index.js"
+                },
+                "region": {
+                  "startLine": 5
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

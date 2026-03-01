@@ -1,0 +1,137 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "JS Recon Analyzer PRO (Next-Gen)",
+          "informationUri": "https://example.com",
+          "rules": [
+            {
+              "id": "SEC_SLACK_WEBHOOK",
+              "shortDescription": {
+                "text": "SEC_SLACK_WEBHOOK"
+              }
+            },
+            {
+              "id": "INFRA_HARDCODED_HTTP",
+              "shortDescription": {
+                "text": "INFRA_HARDCODED_HTTP"
+              }
+            },
+            {
+              "id": "SEC_AWS_KEY",
+              "shortDescription": {
+                "text": "SEC_AWS_KEY"
+              }
+            },
+            {
+              "id": "HIGH_ENTROPY_SECRET",
+              "shortDescription": {
+                "text": "HIGH_ENTROPY_SECRET"
+              }
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "SEC_SLACK_WEBHOOK",
+          "level": "error",
+          "message": {
+            "text": "Slack Webhook URL detected."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "vuln-test.js"
+                },
+                "region": {
+                  "startLine": 5
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "INFRA_HARDCODED_HTTP",
+          "level": "note",
+          "message": {
+            "text": "Hardcoded external HTTP/HTTPS Endpoint (Recon)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "vuln-test.js"
+                },
+                "region": {
+                  "startLine": 5
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "SEC_AWS_KEY",
+          "level": "error",
+          "message": {
+            "text": "AWS Access Key ID detected."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "vuln-test.js"
+                },
+                "region": {
+                  "startLine": 6
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "HIGH_ENTROPY_SECRET",
+          "level": "error",
+          "message": {
+            "text": "High Entropy String detected"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "vuln-test.js"
+                },
+                "region": {
+                  "startLine": 5
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "HIGH_ENTROPY_SECRET",
+          "level": "error",
+          "message": {
+            "text": "High Entropy String detected"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "vuln-test.js"
+                },
+                "region": {
+                  "startLine": 6
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

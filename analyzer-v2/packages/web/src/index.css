@@ -1,0 +1,219 @@
+:root {
+  --bg-color: #0d0f17;
+  --bg-gradient: radial-gradient(circle at 15% 50%, #151a2a, #0d0f17 50%);
+  --accent-primary: #3b82f6;
+  --accent-glow: rgba(59, 130, 246, 0.4);
+  --accent-secondary: #8b5cf6;
+  --accent-danger: #ef4444;
+  --accent-warning: #f59e0b;
+  --accent-success: #10b981;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: var(--bg-gradient);
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.header {
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 1px solid var(--glass-border);
+  background: rgba(13, 15, 23, 0.7);
+  backdrop-filter: blur(12px);
+  z-index: 10;
+}
+
+.header h1 {
+  font-size: 1.5rem;
+  background: linear-gradient(to right, var(--accent-primary), var(--accent-secondary));
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.input-toggles .toggle-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-muted);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+.input-toggles .toggle-btn:hover { background: rgba(255, 255, 255, 0.1); }
+.input-toggles .toggle-btn.active {
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+  color: white;
+}
+
+.main-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  padding: 1.5rem;
+  gap: 1.5rem;
+}
+
+.editor-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.editor-header {
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid var(--glass-border);
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.monaco-container {
+  flex: 1;
+  position: relative;
+}
+
+.results-section {
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  overflow-y: auto;
+}
+
+.glass-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  backdrop-filter: blur(8px);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.glass-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.stat-box {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: 'Fira Code', monospace;
+}
+
+.issue-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.issue-item {
+  background: rgba(0, 0, 0, 0.2);
+  border-left: 3px solid var(--accent-primary);
+  border-radius: 4px 8px 8px 4px;
+  padding: 0.75rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  animation: slideIn 0.3s ease-out forwards;
+  opacity: 0;
+  transform: translateX(10px);
+}
+
+.issue-item.security { border-color: var(--accent-danger); }
+.issue-item.performance { border-color: var(--accent-warning); }
+.issue-item.auth { border-color: var(--accent-secondary); }
+.issue-item.endpoint { border-color: #14b8a6; /* Teal */ }
+
+.issue-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.issue-message {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}

@@ -1,0 +1,20 @@
+{
+    "name": "@js-analyzer/cli",
+    "version": "1.0.0",
+    "description": "CLI tool for Advanced JS Analyzer",
+    "bin": {
+        "js-analyzer": "./bin/analyzer.js"
+    },
+    "scripts": {
+        "start": "node ./bin/analyzer.js"
+    },
+    "dependencies": {
+        "@js-analyzer/core": "*",
+        "axios": "^1.13.5",
+        "chalk": "^4.1.2",
+        "cli-table3": "^0.6.5",
+        "commander": "^12.1.0",
+        "inquirer": "^8.2.7",
+        "ora": "^5.4.1"
+    }
+}

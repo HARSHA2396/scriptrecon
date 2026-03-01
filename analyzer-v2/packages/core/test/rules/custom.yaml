@@ -1,0 +1,14 @@
+rules:
+  # Define a custom source where user input enters the system
+  - id: CUSTOM_SOURCE_HEADER
+    description: "Data entering from the x-custom-auth header"
+    type: SOURCE
+    severity: 7
+    targetPattern: "x-custom-auth"
+
+  # Define a custom proprietary sink within the user's framework
+  - id: PROPRIETARY_LOGGING_SINK
+    description: "Sensitive data sent to custom company logger"
+    type: SINK
+    severity: 9
+    targetPattern: "logToSplunk"
