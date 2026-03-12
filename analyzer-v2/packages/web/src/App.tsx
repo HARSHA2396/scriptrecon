@@ -3,8 +3,7 @@ import { Editor } from '@monaco-editor/react';
 import { Activity, ShieldAlert, Zap, Layers, CheckCircle2, Lock, Route, UploadCloud, Globe, Code2 } from 'lucide-react';
 import { useDropzone } from 'react-dropzone';
 import axios from 'axios';
-import * as jsAnalyzerCore from '@js-analyzer/core';
-const { analyzeCode } = jsAnalyzerCore;
+import { analyzeCode } from '@js-analyzer/core';
 import './index.css';
 
 const DEFAULT_CODE = `// Penetration Testing & Vulnerability Sandbox
