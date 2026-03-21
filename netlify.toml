@@ -1,0 +1,9 @@
+[build]
+  base = "analyzer-v2"
+  command = "npm install && npm run build -w packages/core && npm run build -w packages/web"
+  publish = "packages/web/dist"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
