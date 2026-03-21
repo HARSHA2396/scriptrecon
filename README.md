@@ -47,8 +47,11 @@ npm run dev
 ```
 The app will open locally at `http://localhost:5173`.
 
-**Deploying to Vercel / Netlify:**
-Select the root directory as `analyzer-v2/packages/web/` when importing this repo in your dashboard, and let the build commands automatically execute.
+**Deploying to Netlify / Cloudflare Pages / GitHub Pages:**
+Since ScriptRecon is a purely front-end application, you can host it on any static site provider.
+1. Make sure your root directory (or build directory) is set to `analyzer-v2/packages/web/`.
+2. The build command is `npm run build` (or `npm run build` inside the `packages/web` folder).
+3. The publish/output directory is `dist`.
 
 ### 2. CLI Tool
 
